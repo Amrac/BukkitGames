@@ -1,0 +1,34 @@
+name: The BukkitGames
+main: me.ftbastler.BukkitGames.BGMain
+version: 1.0.0
+website: http://www.bukkit.org/server-mods/bukkitgames
+author: ftbastler
+startup: startup
+depend: [Vault]
+description: >
+             The BukkitGames.
+commands:
+  help:
+    description: Help.
+    usage: /<command>
+  kit:
+    description: Kits.
+    usage: /<command>
+  kitinfo:
+    description: Kits info.
+    usage: /<command> [kitName]
+  start:
+    description: Start.
+    usage: /<command>
+  chest:
+    description: Spawn chest.
+    usage: /<command>
+  rchest:
+    description: Spawn chest.
+    usage: /<command>
+  gamemaker:
+    description: GameMaker.
+    usage: /<command>
+  spawn:
+    description: Spawn.
+    usage: /<command>

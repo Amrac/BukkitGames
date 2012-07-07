@@ -1,0 +1,68 @@
+TIME:
+# Max game length in minutes
+  MAX_GAME-MIN: 90
+  
+# Final battle takes place after ... minutes
+  INCREASE_DIFFICULTY-MIN: 50
+  
+# Countdown to the start of the game
+  COUNTDOWN-SEC: 300
+  
+# Duration of invincibility.
+  FINAL_COUNTDOWN-SEC: 60
+  
+# Define the messages.
+MESSAGE:
+  WORLD_BORDER: You have reached the Worldborder!
+  SERVER_FULL: The server is full.
+  GAME_PROGRESS: Game is in progress.
+  MOTD_PROGRESS: Game is in progress.
+  MOTD_COUNTDOWN: Game begins in <time>.
+  NO_KIT_PERMISSION: You are not allowed to use this kit.
+  HELP_MESSAGE: For help, visit tinyurl.com/HGHelp
+  SERVER_TITLE: BukkitGames HG Server
+  KIT_BUY_WEBSITE: Ask operator.
+
+# Toggle the advanced chat-system. (HUD chat-system)
+ADVANCED_CHAT: true
+  
+# No more than 6 tips displayed periodically throughout the game.
+TIP:
+  '1': Some kits have special abilities.
+  '2': This server runs the BukkitGames plugin.
+  '3': GameMakers are invisible!
+  '4': Get help by typing in /help.
+  '5': Get information about a kit with /kitinfo [KitName].
+  '6': This server runs the BukkitGames plugin.
+  
+# Radius of the world...
+WORLD_BORDER_RADIUS: 300
+
+# Minimum of players to start with.
+MINIMUM_PLAYERS_START: 5
+
+# Enable or disable compass feature.
+COMPASS: true
+
+# What should the server run in order to restart the server?
+RESTART_SERVER_COMMAND: 'stop'
+
+# Regenerate world? (false: Put your custom map in the directory /plugins/The BukkitGames/ and rename it to "world")
+REGEN_WORLD: true
+
+# Spawn chests throughout the game?
+SPAWN_CHESTS: false
+
+# If false, all players start the game at the spawn.
+# If true, each players starts at a random spot.
+RANDOM_START: false
+
+# Weather to use a MySQL database for statistics. (leaderboard.yml will still be used!)
+MYSQL: false
+
+# Fill in the information for the database if you set "MYSQL" to true.
+HOST: ''
+PORT: ''
+USERNAME: ''
+PASSWORD: ''
+DATABASE: ''

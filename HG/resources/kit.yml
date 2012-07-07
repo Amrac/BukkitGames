@@ -1,0 +1,124 @@
+KITS:
+  - Barbarian
+  - Miner
+  - Fisherman
+  - Beastmaster
+  - Enderman
+  - Pyro
+  - Poseidon
+  - Scout
+  - Snowman
+  - Chemist
+  - Archer
+  - Engineer
+
+# Add a section for each kit. EXAMPLE:
+# kitname: [THE NAME - SAME AS ABOVE - HAS TO BE IN SMALL LETTERS]
+#  ITEMS:  [LIST OF ALL ITEMS]
+#    - 'ITEM_ID:DURABILITY,AMOUNT,ENCHANTMENT_ID,ENCHANTMENT_LEVEL'
+#  ABILITY: 0 [THE ID OF THE ABILITY - 0 IS NO ABILITY]
+#  POTION: POTION_ID,DURATION(IN SECONDS),AMPLIFIER [POTION_ID: 0 IS NO POTION, DURATION: 0 IS ENDLESS]
+
+barbarian:
+  ITEMS:
+    - '272,1'
+  ABILITY: 0
+  POTION: 0
+miner:
+  ITEMS:
+    - '274,1,32,1'
+    - '306,1'
+  ABILITY: 0
+  POTION: '2,0,1'
+fisherman:
+  ITEMS:
+    - '346,1'
+    - '349,7'
+    - '300,1'
+    - '301,1'
+  ABILITY: 0
+  POTION: 0
+beastmaster:
+  ITEMS:
+    - '383:95,3'
+    - '352,5'
+  ABILITY: 0
+  POTION: '18,30,1'
+enderman:
+  ITEMS:
+    - '368,5'
+    - '2,16'
+  ABILITY: 0
+  POTION: 0
+pyro:
+  ITEMS:
+    - '259,1'
+    - '299,1,1'
+  ABILITY: 6
+  POTION: 0
+poseidon:
+  ITEMS:
+    - '373:8195,1'
+  ABILITY: 5
+  POTION: 0
+scout:
+  ITEMS:
+    - '373:8194,1'
+  ABILITY: 0
+  POTION: '8,0,0'
+snowman:
+  ITEMS:
+    - '332,5'
+    - '86,1'
+  ABILITY: 3
+  POTION: 0
+chemist:
+  ITEMS:
+    - '373:16456,1'
+    - '373:16452,1'
+    - '373:16458,1'
+  ABILITY: 0
+  POTION: 0
+archer:
+  ITEMS:
+    - '261,1'
+    - '262,24'
+  ABILITY: 9
+engineer:
+  ITEMS:
+    - '46,5'
+    - '69,5'
+  ABILITY: 0
+  POTION: 0
+summoner:
+  ITEMS:
+    - '383:54,1'
+    - '383:50,1'
+    - '383:51,1'
+  ABILITY: 0
+  POTION: 0
+orc:
+  ITEMS:
+    - '373:8233,1'
+  ABILITY: 0
+  POTION: 0
+farmer:
+  ITEMS:
+    - '291,1'
+    - '295,15'
+    - '351:15,15'
+  ABILITY: 0
+  POTION: 0
+healer:
+  ITEMS:
+    - '373:8229,3'
+  ABILITY: 0
+  POTION: '6,120,1'
+tank:
+  ITEMS:
+    - '298,1'
+    - '299,1'
+    - '300,1'
+    - '301,1'
+  ABILITY: 0
+  POTION: '19,30,1'
