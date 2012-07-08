@@ -77,7 +77,6 @@ public class BGMain extends JavaPlugin {
 	public Boolean QUIT_MSG = false;
 	public Boolean DEATH_MSG = false;
 	public Boolean COMPASS = false;
-	public Boolean CanStillJoin = true;
 	public Location spawn;
 	public String STOP_CMD = "";
 	public String LAST_WINNER = "";
@@ -95,6 +94,9 @@ public class BGMain extends JavaPlugin {
 	public String SQL_PASS = null;
 	public String SQL_DATA = null;
 	public Connection con = null;
+	
+	public ArrayList<String> CanJoin = new ArrayList<String>();
+	public Boolean WithinTime = true;
 
 	final Timer timer1 = new Timer();
 	TimerTask task1 = new TimerTask() {
@@ -635,7 +637,7 @@ public class BGMain extends JavaPlugin {
 		
 		getServer().getScheduler().scheduleSyncDelayedTask(this, new Runnable() {
 		public void run() {
-       canStillJoin=false;
+       WithinTime=false;
    }
 }, 2400L);
 	}
