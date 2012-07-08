@@ -77,6 +77,7 @@ public class BGMain extends JavaPlugin {
 	public Boolean QUIT_MSG = false;
 	public Boolean DEATH_MSG = false;
 	public Boolean COMPASS = false;
+	public Boolean CanStillJoin = true;
 	public Location spawn;
 	public String STOP_CMD = "";
 	public String LAST_WINNER = "";
@@ -624,13 +625,19 @@ public class BGMain extends JavaPlugin {
 		this.DENY_CHECK_WORLDBORDER = Boolean.valueOf(false);
 		if (ADV_CHAT_SYSTEM) {
 			BGChat.printInfoChat(" --- The games have begun! ---");
-			BGChat.printDeathChat("§e\"May the odds be ever in your favor!\"");
+			BGChat.printDeathChat("ï¿½e\"May the odds be ever in your favor!\"");
 		} else {
 			BGChat.printTimeChat("");
 			BGChat.printTimeChat("The games have begun!");
 		}
 		BGChat.printTimeChat("Everyone is invincible for "
 				+ TIME(this.FINAL_COUNTDOWN_SECONDS) + ".");
+		
+		getServer().getScheduler().scheduleSyncDelayedTask(this, new Runnable() {
+		public void run() {
+       canStillJoin=false;
+   }
+}, 2400L);
 	}
 
 	public boolean hasPerm(Player p, String s) {
