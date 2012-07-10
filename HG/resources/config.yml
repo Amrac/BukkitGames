@@ -53,6 +53,9 @@ REGEN_WORLD: true
 # Spawn chests throughout the game?
 SPAWN_CHESTS: false
 
+# Radius for spawning chest from the spawn.
+CHESTS_RADIUS: 300
+
 # If false, all players start the game at the spawn.
 # If true, each players starts at a random spot.
 RANDOM_START: false

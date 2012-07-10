@@ -85,6 +85,7 @@ public class BGMain extends JavaPlugin {
 	public Integer GAME_RUNNING_TIME = Integer.valueOf(0);
 	HashMap<World, ArrayList<Border>> BORDERS = new HashMap<World, ArrayList<Border>>();
 	public static Integer WORLDRADIUS = Integer.valueOf(250);
+	public static Integer CHESTRADIUS = Integer.valueOf(250);
 	public Boolean SQL_USE = false;
 
 	public Integer SQL_GAMEID = null;
@@ -273,7 +274,9 @@ public class BGMain extends JavaPlugin {
 				"MINIMUM_PLAYERS_START"));
 		BGMain.WORLDRADIUS = Integer.valueOf(getConfig().getInt(
 				"WORLD_BORDER_RADIUS"));
-
+		BGMain.CHESTRADIUS = Integer.valueOf(getConfig().getInt(
+				"CHESTS_RADIUS"));
+		
 		this.MAX_GAME_RUNNING_TIME = Integer.valueOf(getConfig().getInt(
 				"TIME.MAX_GAME-MIN"));
 		COUNTDOWN_SECONDS = Integer.valueOf(getConfig().getInt(
@@ -475,7 +478,7 @@ public class BGMain extends JavaPlugin {
 	}
 
 	public void spawnChest() {
-		spawnChest(randomLocation(this.spawn.getChunk()));
+		spawnChest(chestRandomLocation(this.spawn.getChunk()));
 	}
 
 	public void spawnChest(Location l) {
@@ -497,7 +500,7 @@ public class BGMain extends JavaPlugin {
 	}
 
 	public void spawnTable() {
-		spawnTable(randomLocation(this.spawn.getChunk()));
+		spawnTable(chestRandomLocation(this.spawn.getChunk()));
 	}
 
 	public void spawnTable(Location l) {
@@ -649,6 +652,19 @@ public class BGMain extends JavaPlugin {
 		loc.setY(newY);
 		return loc;
 	}
+	
+	public static Location chestRandomLocation(Chunk c) {
+		Random random = new Random();
+		Location startFrom = Bukkit.getWorld("world").getSpawnLocation();
+		Location loc = startFrom.clone();
+		loc.add((random.nextBoolean() ? 1 : -1) * random.nextInt(CHESTRADIUS),
+				60,
+				(random.nextBoolean() ? 1 : -1) * random.nextInt(CHESTRADIUS));
+		int newY = Bukkit.getWorld("world").getHighestBlockYAt(loc);
+		loc.setY(newY);
+		return loc;
+	}
+
 
 	public static Location getRandomLocation() {
 		Random random = new Random();
