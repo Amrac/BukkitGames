@@ -318,6 +318,7 @@ public class BGMain extends JavaPlugin {
 		BGChat.tip6 = getConfig().getString("TIP.6");
 
 		World thisWorld = getServer().getWorld("world");
+		thisWorld.setSpawnLocation(0, 128, 0);
 		this.spawn = thisWorld.getSpawnLocation();
 
 		Border newBorder = new Border(this.spawn.getX(), this.spawn.getZ(),
