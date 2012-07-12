@@ -172,7 +172,7 @@ public class BGMain extends JavaPlugin {
 			if ((BGMain.this.GAME_RUNNING_TIME % 5 == 0)
 					& (BGMain.this.GAME_RUNNING_TIME % 10 != 0)) {
 				if (BGMain.this.SPAWN_CHESTS == true) {
-					BGMain.this.spawnTable();
+					BGMain.this.spawnChest();
 				}
 			}
 			if ((BGMain.this.GAME_RUNNING_TIME % 5 != 0)
@@ -487,7 +487,7 @@ public class BGMain extends JavaPlugin {
 		Random r = new Random();
 		c.getInventory().addItem(
 				new ItemStack[] {
-						new ItemStack(r.nextInt(22) + 298, 1, (short) r
+						new ItemStack(r.nextInt(7) + 306, 1, (short) r
 								.nextInt(100)),
 						new ItemStack(r.nextInt(4) + 283, 1, (short) r
 								.nextInt(100)),
