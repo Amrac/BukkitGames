@@ -95,6 +95,9 @@ public class BGMain extends JavaPlugin {
 	public String SQL_PASS = null;
 	public String SQL_DATA = null;
 	public Connection con = null;
+	
+	public ArrayList<String> CanJoin = new ArrayList<String>();
+	public Boolean WithinTime = true;
 
 	final Timer timer1 = new Timer();
 	TimerTask task1 = new TimerTask() {
@@ -628,13 +631,19 @@ public class BGMain extends JavaPlugin {
 		this.DENY_CHECK_WORLDBORDER = Boolean.valueOf(false);
 		if (ADV_CHAT_SYSTEM) {
 			BGChat.printInfoChat(" --- The games have begun! ---");
-			BGChat.printDeathChat("§e\"May the odds be ever in your favor!\"");
+			BGChat.printDeathChat("ï¿½e\"May the odds be ever in your favor!\"");
 		} else {
 			BGChat.printTimeChat("");
 			BGChat.printTimeChat("The games have begun!");
 		}
 		BGChat.printTimeChat("Everyone is invincible for "
 				+ TIME(this.FINAL_COUNTDOWN_SECONDS) + ".");
+		
+		getServer().getScheduler().scheduleSyncDelayedTask(this, new Runnable() {
+		public void run() {
+       WithinTime=false;
+   }
+}, 2400L);
 	}
 
 	public boolean hasPerm(Player p, String s) {

@@ -277,7 +277,10 @@ public class BGListener implements Listener {
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void onPlayerLogin(PlayerLoginEvent event) {
 		Player p = event.getPlayer();
-
+		if(this.plugin.CanJoin.contains(p.getName())) {
+			this.plugin.CanJoin.remove(p.getName());
+			event.allow();
+		}
 		if (this.plugin.DENY_LOGIN.booleanValue()
 				& (!plugin.hasPerm(p, "bg.admin.logingame") || !plugin.hasPerm(
 						p, "bg.admin.*"))) {
@@ -402,15 +405,15 @@ public class BGListener implements Listener {
 
 	@EventHandler
 	public void onPlayerJoin(PlayerJoinEvent event) {
+		Player p = event.getPlayer();
 		if (!plugin.DENY_LOGIN.booleanValue() & plugin.ADV_CHAT_SYSTEM) {
-			BGChat.printDeathChat("§e" + event.getJoinMessage());
+			BGChat.printDeathChat("ï¿½e" + event.getJoinMessage());
 		}
 
 		if (this.plugin.DENY_LOGIN.booleanValue() || plugin.ADV_CHAT_SYSTEM) {
 			event.setJoinMessage(null);
 		}
 
-		Player p = event.getPlayer();
 		if (plugin.DENY_LOGIN) {
 			if (plugin.hasPerm(p, "bg.admin.gamemaker")
 					|| plugin.hasPerm(p, "bg.admin.*")) {
@@ -418,7 +421,7 @@ public class BGListener implements Listener {
 					p.setGameMode(GameMode.CREATIVE);
 					BGVanish.makeVanished(p);
 
-					BGChat.printPlayerChat(p, "§2You are now a GameMaker.");
+					BGChat.printPlayerChat(p, "ï¿½2You are now a GameMaker.");
 				}
 			}
 		} else {
@@ -526,8 +529,11 @@ public class BGListener implements Listener {
 	@EventHandler
 	public void onPlayerQuit(PlayerQuitEvent event) {
 		Player p = event.getPlayer();
+		if(this.plugin.WithinTime) {
+			this.plugin.CanJoin.add(p.getName());
+			}
 		if (!plugin.DENY_LOGIN.booleanValue() & plugin.ADV_CHAT_SYSTEM) {
-			BGChat.printDeathChat("§e" + event.getQuitMessage());
+			BGChat.printDeathChat("ï¿½e" + event.getQuitMessage());
 		}
 
 		if (this.plugin.DENY_LOGIN.booleanValue() || plugin.ADV_CHAT_SYSTEM) {
