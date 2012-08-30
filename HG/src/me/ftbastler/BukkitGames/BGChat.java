@@ -23,7 +23,7 @@ public class BGChat {
 
 	static String TIMER_MSG = ""; 
 	static String DEATH_MSG = ""; 
-	static String INFO_MSG = "Welcome to the HungerGames! | Get your kit now: §f/kit"; 
+	static String INFO_MSG = "Welcome to the HungerGames! | Get your kit now: ï¿½f/kit"; 
 	static HashMap<Player, String> PLAYER_MSG = new HashMap<Player, String>();
 	static HashMap<Player, Boolean> KIT_CHAT = new HashMap<Player, Boolean>();
 	static HashMap<Player, Boolean> HELP_CHAT = new HashMap<Player, Boolean>();
@@ -73,7 +73,7 @@ public class BGChat {
 			INFO_MSG = text;
 			updateChat();
 		} else {
-			Bukkit.getServer().broadcastMessage("§2" + text);
+			Bukkit.getServer().broadcastMessage("ï¿½2" + text);
 		}
 	}
 
@@ -82,7 +82,7 @@ public class BGChat {
 			DEATH_MSG = text;
 			updateChat();
 		} else {
-			Bukkit.getServer().broadcastMessage("§c" + text);
+			Bukkit.getServer().broadcastMessage("ï¿½c" + text);
 		}
 	}
 
@@ -91,13 +91,13 @@ public class BGChat {
 			TIMER_MSG = text;
 			updateChat();
 		} else {
-			Bukkit.getServer().broadcastMessage("§a" + text);
+			Bukkit.getServer().broadcastMessage("ï¿½a" + text);
 		}
 	}
 
 	public static void printPlayerChat(Player player, String text) {
 		if (plugin.ADV_CHAT_SYSTEM) {
-			PLAYER_MSG.put(player, "§7" + text);
+			PLAYER_MSG.put(player, "ï¿½7" + text);
 			updateChat(player);
 			final Player pl = player;
 			Bukkit.getServer().getScheduler()
@@ -107,7 +107,7 @@ public class BGChat {
 						}
 					}, 100);
 		} else {
-			player.sendMessage("§a" + text);
+			player.sendMessage("ï¿½a" + text);
 		}
 	}
 
@@ -139,12 +139,12 @@ public class BGChat {
 				is = "minute";
 				minute = "minute";
 			}
-			player.sendMessage("§7 - There " + are + " "
+			player.sendMessage("ï¿½7 - There " + are + " "
 					+ plugin.getGamers().length + " " + players + " online.");
-			player.sendMessage("§7 - There " + is + " " + timeleft + " "
+			player.sendMessage("ï¿½7 - There " + is + " " + timeleft + " "
 					+ minute + " left.");
 			if (plugin.HELP_MESSAGE != null && plugin.HELP_MESSAGE != "")
-				player.sendMessage("§7 - " + plugin.HELP_MESSAGE);
+				player.sendMessage("ï¿½7 - " + plugin.HELP_MESSAGE);
 		}
 	}
 
@@ -177,11 +177,11 @@ public class BGChat {
 				}
 			}
 			player.sendMessage("");
-			player.sendMessage("§bAvailable kits: §7(/kit [KitName])");
+			player.sendMessage("ï¿½bAvailable asdasdkits: ï¿½7(/kit [KitName])");
 			player.sendMessage("");
-			player.sendMessage("§aYour kits: §f" + yourkits);
-			player.sendMessage("§aOther kits: §f" + otherkits);
-			player.sendMessage("§bMore kits available at: "
+			player.sendMessage("ï¿½aYour kisdasdts: ï¿½f" + yourkits);
+			player.sendMessage("ï¿½aOther kasdasdits: ï¿½f" + otherkits);
+			player.sendMessage("ï¿½bMore kiasdasdts available at: "
 					+ plugin.KIT_BUY_WEB);
 			player.sendMessage("");
 		}
@@ -215,7 +215,7 @@ public class BGChat {
 			stringArray[0] = Character.toUpperCase(stringArray[0]);
 			kitinfoname = new String(stringArray);
 
-			player.sendMessage("§a" + kitinfoname + " kit includes:");
+			player.sendMessage("ï¿½a" + kitinfoname + " kit includes:");
 
 			List<String> kititems = kit.getStringList("ITEMS");
 			for (String item : kititems) {
@@ -252,13 +252,13 @@ public class BGChat {
 							+ ench_numb;
 				}
 
-				player.sendMessage("§f" + itemstring);
+				player.sendMessage("ï¿½f" + itemstring);
 			}
 
 			String abils = getAbilityDesc(kit.getInt("ABILITY"));
 
 			if (abils != "None") {
-				player.sendMessage("§f - " + abils);
+				player.sendMessage("ï¿½f - " + abils);
 
 			}
 		}
@@ -298,7 +298,7 @@ public class BGChat {
 			updateChat();
 		} else {
 			if (tip != "" || tip != null)
-				Bukkit.getServer().broadcastMessage("§7[TIP] " + tip);
+				Bukkit.getServer().broadcastMessage("ï¿½7[TIP] " + tip);
 		}
 	}
 
@@ -355,14 +355,14 @@ public class BGChat {
 				help_length = help_length - 50;
 			}
 
-			p.sendMessage("§b" + plugin.SERVER_TITLE);
+			p.sendMessage("ï¿½b" + plugin.SERVER_TITLE);
 			p.sendMessage("");
-			p.sendMessage("§7 - There " + are + " " + plugin.getGamers().length
+			p.sendMessage("ï¿½7 - There " + are + " " + plugin.getGamers().length
 					+ " " + players + " online.");
-			p.sendMessage("§7 - There " + is + " " + timeleft + " " + minute
+			p.sendMessage("ï¿½7 - There " + is + " " + timeleft + " " + minute
 					+ " left.");
 			if (plugin.HELP_MESSAGE != null && plugin.HELP_MESSAGE != "")
-				p.sendMessage("§7 - " + plugin.HELP_MESSAGE);
+				p.sendMessage("ï¿½7 - " + plugin.HELP_MESSAGE);
 
 			if (PLAYER_MSG.containsKey(p))
 				line++;
@@ -407,12 +407,12 @@ public class BGChat {
 				line++;
 				yourline = yourline - 50;
 			}
-			p.sendMessage("§bAvailable kits: §7(/kit [KitName])");
+			p.sendMessage("ï¿½bAvailable kits: ï¿½7(/kit [KitName])");
 			p.sendMessage("");
-			p.sendMessage("§aYour kits: §f" + yourkits);
-			p.sendMessage("§aOther kits: §f" + otherkits);
+			p.sendMessage("ï¿½aYour kits: ï¿½f" + yourkits);
+			p.sendMessage("ï¿½aOther kits: ï¿½f" + otherkits);
 			p.sendMessage("");
-			p.sendMessage("§bMore kits available at: " + plugin.KIT_BUY_WEB);
+			p.sendMessage("ï¿½bMore kits available at: " + plugin.KIT_BUY_WEB);
 
 			if (PLAYER_MSG.containsKey(p))
 				line++;
@@ -440,7 +440,7 @@ public class BGChat {
 			stringArray[0] = Character.toUpperCase(stringArray[0]);
 			kitinfoname = new String(stringArray);
 
-			p.sendMessage("§a" + kitinfoname + " kit includes:");
+			p.sendMessage("ï¿½a" + kitinfoname + " kit includes:");
 			p.sendMessage("");
 			line++;
 			line++;
@@ -480,12 +480,12 @@ public class BGChat {
 							+ ench_numb;
 				}
 				line++;
-				p.sendMessage("§f" + itemstring);
+				p.sendMessage("ï¿½f" + itemstring);
 			}
 
 			String abils = getAbilityDesc(kit.getInt("ABILITY"));
 			if (abils != null) {
-				p.sendMessage("§f - " + abils);
+				p.sendMessage("ï¿½f - " + abils);
 				line++;
 			}
 			if (PLAYER_MSG.containsKey(p))
@@ -496,15 +496,15 @@ public class BGChat {
 				line++;
 			}
 			if (PLAYER_MSG.containsKey(p))
-				p.sendMessage("§7" + PLAYER_MSG.get(p));
+				p.sendMessage("ï¿½7" + PLAYER_MSG.get(p));
 
 		} else {
 
 			// Print chat
-			p.sendMessage("§9" + INFO_MSG);
-			p.sendMessage("§c" + DEATH_MSG);
+			p.sendMessage("ï¿½9" + INFO_MSG);
+			p.sendMessage("ï¿½c" + DEATH_MSG);
 			if (plugin.DENY_DAMAGE_PLAYER)
-				p.sendMessage("§a" + TIMER_MSG);
+				p.sendMessage("ï¿½a" + TIMER_MSG);
 			else {
 				Integer timeleft = plugin.MAX_GAME_RUNNING_TIME
 						- plugin.GAME_RUNNING_TIME;
@@ -513,8 +513,8 @@ public class BGChat {
 					minute = "minute";
 				}
 
-				p.sendMessage("§a" + "Players remaining: §f"
-						+ plugin.getGamers().length + " §a| Time remaining: §f"
+				p.sendMessage("ï¿½a" + "Players remaining: ï¿½f"
+						+ plugin.getGamers().length + " ï¿½a| Time remaining: ï¿½f"
 						+ timeleft + " " + minute);
 			}
 			p.sendMessage("-----------------------------------------------------");
